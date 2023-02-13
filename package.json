@@ -1,0 +1,46 @@
+{
+    "name": "react-shadow-element",
+    "version": "0.1.0",
+    "description": "React Element with a DOM Shadow Root.",
+    "main": "./dist/index.js",
+    "types": "./dist/index.d.ts",
+    "license": "MIT",
+    "type": "module",
+    "scripts": {
+        "build": "tsc && vite build",
+        "lint": "eslint src/**"
+    },
+    "dependencies": {},
+    "peerDependencies": {
+        "react": "^18.2.0",
+        "react-dom": "^18.2.0"
+    },
+    "devDependencies": {
+        "@rollup/plugin-typescript": "^11.0.0",
+        "@types/node": "^18.13.0",
+        "@types/react": "^18.0.27",
+        "@types/react-dom": "^18.0.10",
+        "@vitejs/plugin-react": "^3.1.0",
+        "eslint": "^8.34.0",
+        "eslint-config-react-app": "^7.0.1",
+        "path": "^0.12.7",
+        "rollup-plugin-typescript-paths": "^1.4.0",
+        "typescript": "^4.9.3",
+        "vite": "^4.1.0"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/maarlo/react-shadow-element.git"
+    },
+    "keywords": [
+        "React",
+        "React Element",
+        "Shadow DOM",
+        "Shadow Root"
+    ],
+    "author": "Mario Aragones Lozano (maarlo) <mario.aragones.lozano@gmail.com>",
+    "bugs": {
+        "url": "https://github.com/maarlo/react-shadow-element/issues"
+    },
+    "homepage": "https://github.com/maarlo/react-shadow-element#readme"
+}

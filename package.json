@@ -1,6 +1,6 @@
 {
     "name": "react-shadow-element",
-    "version": "0.1.1",
+    "version": "0.1.2",
     "description": "React Element with a DOM Shadow Root.",
     "main": "./dist/index.js",
     "types": "./dist/index.d.ts",
@@ -42,5 +42,5 @@
     "bugs": {
         "url": "https://github.com/maarlo/react-shadow-element/issues"
     },
-    "homepage": "https://github.com/maarlo/react-shadow-element#readme"
+    "homepage": "https://github.com/maarlo/react-shadow-element"
 }

@@ -23,9 +23,19 @@ type ShadowRootProps = ShadowProps & {
     reactDomRoot: ReactDOM.Root | undefined,
 }
 
-export function Shadow(props: ShadowProps) {
+export const Shadow = forwardRef<HTMLDivElement, ShadowProps>((props, ref) => {
     const root = useRef<HTMLDivElement | null>(null);
     const [reactDomRoot, setReactDomRoot] = useState<ReactDOM.Root | undefined>(undefined);
+
+    const setRef = (node: HTMLDivElement | null) => {
+        if (ref !== null) {
+            typeof ref === "function"
+                ? ref(node)
+                : ref.current = node;
+        }
+
+        root.current = node;
+    }
 
     useEffect(() => {
         createShadowRoot(root, setReactDomRoot, document.createElement("slot"));
@@ -34,18 +44,28 @@ export function Shadow(props: ShadowProps) {
     return (
         <ShadowRoot
             {...props}
-            ref={root}
+            ref={setRef}
             reactDomRoot={reactDomRoot}
         />
     );
-}
+});
 
-export function ShadowDiv(props: ShadowDivProps) {
+export const ShadowDiv = forwardRef<HTMLDivElement, ShadowDivProps>((props, ref) => {
     const { shadowStyle } = props;
 
     const root = useRef<HTMLDivElement | null>(null);
     const [reactDomRoot, setReactDomRoot] = useState<ReactDOM.Root | undefined>(undefined);
     const [shadowRootElement, setShadowRootElement] = useState<HTMLDivElement | undefined>(undefined);
+
+    const setRef = (node: HTMLDivElement | null) => {
+        if (ref !== null) {
+            typeof ref === "function"
+                ? ref(node)
+                : ref.current = node;
+        }
+
+        root.current = node;
+    }
 
     useEffect(() => {
         const shadowRootElement = createShadowRoot(root, setReactDomRoot, document.createElement("div"));
@@ -63,11 +83,11 @@ export function ShadowDiv(props: ShadowDivProps) {
     return (
         <ShadowRoot
             {...props}
-            ref={root}
+            ref={setRef}
             reactDomRoot={reactDomRoot}
         />
     );
-}
+});
 
 const ShadowRoot = forwardRef<HTMLDivElement, ShadowRootProps>(({ style, className, DomChildren, children, reactDomRoot }, ref) => {
     useEffect(() => {

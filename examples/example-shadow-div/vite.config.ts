@@ -6,6 +6,11 @@ import eslint from 'vite-plugin-eslint';
 export default defineConfig({
     plugins: [
         react(),
-        // eslint()
+        eslint({
+            "exclude": [
+                "**/node_modules/**",
+                "**/react-shadow-element/dist/**"
+            ],
+        })
     ],
 })

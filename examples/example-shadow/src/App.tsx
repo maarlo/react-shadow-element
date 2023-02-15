@@ -5,8 +5,8 @@ import './App.css';
 export default function App() {
     return (
         <div className="app">
-            <Shadow className="w-100" style={{ height: "100%" }} DomChildren={DomChildren} >
-                <ShadowChildren />
+            <Shadow className="w-100" style={{ height: "100%" }} shadowChildren={<ShadowChildren />} >
+                <DomChildren />
             </Shadow>
         </div>
     );

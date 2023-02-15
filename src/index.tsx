@@ -11,8 +11,8 @@ export function isShadowRootSupported() {
 type ShadowProps = {
     style?: CSSProperties,
     className?: string,
-    DomChildren?: () => JSX.Element,
-    children: JSX.Element,
+    children?: JSX.Element,
+    shadowChildren: JSX.Element,
 }
 
 type ShadowDivProps = ShadowProps & {
@@ -89,18 +89,16 @@ export const ShadowDiv = forwardRef<HTMLDivElement, ShadowDivProps>((props, ref)
     );
 });
 
-const ShadowRoot = forwardRef<HTMLDivElement, ShadowRootProps>(({ style, className, DomChildren, children, reactDomRoot }, ref) => {
+const ShadowRoot = forwardRef<HTMLDivElement, ShadowRootProps>(({ style, className, shadowChildren, children, reactDomRoot }, ref) => {
     useEffect(() => {
         if (reactDomRoot !== undefined) {
-            reactDomRoot.render(children);
+            reactDomRoot.render(shadowChildren);
         }
-    }, [reactDomRoot, children]);
+    }, [reactDomRoot, shadowChildren]);
 
     return (
         <div style={style} className={className} ref={ref}>
-            {DomChildren !== undefined ? (
-                <DomChildren />
-            ) : undefined}
+            {children}
         </div>
     );
 });

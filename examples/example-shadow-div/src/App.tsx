@@ -13,10 +13,10 @@ export default function App() {
             <ShadowDiv
                 className="w-100"
                 style={{ height: "100%" }}
-                DomChildren={DomChildren}
+                shadowChildren={<ShadowChildren />}
                 shadowStyle={{ width: "100%", height: flag ? "100%" : "50%" }}
             >
-                <ShadowChildren />
+                <DomChildren />
             </ShadowDiv>
         </div>
     );

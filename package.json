@@ -1,6 +1,6 @@
 {
     "name": "react-shadow-element",
-    "version": "0.1.3",
+    "version": "0.1.4",
     "description": "React Element with a DOM Shadow Root.",
     "main": "./dist/index.js",
     "types": "./dist/index.d.ts",

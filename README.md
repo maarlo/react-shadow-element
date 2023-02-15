@@ -23,17 +23,17 @@ Two ``JSX.Element`` are exported:
 
 | Prop | Type | Default | Description |
 |------|------|---------|-------------|
-| `children` | `JSX.Element` |   | Shadow DOM Children Elements. |
+| `shadowChildren` | `JSX.Element` |   | Shadow DOM Children Elements. |
 | `style` | `CSSProperties` |  `undefined` | Styles of the DOM Root DIV where the Shadow DOM and Light DOM is attached. |
 | `className` | `string` | `undefined` | ClassNames of the DOM Root DIV where the Shadow DOM and Light DOM is attached. |
-| `DomChildren` | `JSX.Element` | `undefined` | Light DOM Children Elements. |
+| `children` | `JSX.Element` | `undefined` | Light DOM Children Elements. |
 
 ### ShadowDiv
 
 | Prop | Type | Default | Description |
 |------|------|---------|-------------|
-| `children` | `JSX.Element` |   | Shadow DOM Children Elements. |
+| `shadowChildren` | `JSX.Element` |   | Shadow DOM Children Elements. |
 | `shadowStyle` | `CSSProperties` |  `undefined` | Styles of the Shadow Root DIV where the Shadow DOM is attached. |
 | `style` | `CSSProperties` |  `undefined` | Styles of the DOM Root DIV where the Shadow DOM and Light DOM is attached. |
 | `className` | `string` | `undefined` | ClassNames of the DOM Root DIV where the Shadow DOM and Light DOM is attached. |
-| `DomChildren` | `JSX.Element` | `undefined` | Light DOM Children Elements. |
+| `children` | `JSX.Element` | `undefined` | Light DOM Children Elements. |
